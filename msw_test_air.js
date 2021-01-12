@@ -18,7 +18,7 @@ var mqtt = require('mqtt');
 var fs = require('fs');
 var spawn = require('child_process').spawn;
 
-var my_msw_name = 'msw_test_air';
+var my_msw_name = 'msw_tset_air';
 
 var fc = {};
 var config = {};
@@ -322,9 +322,11 @@ function parseDataMission(topic, str_message) {
 }
 ///////////////////////////////////////////////////////////////////////////////
 
-function parseControlMission(topic, str_message) {
+// 유저 디파인 미션 소프트웨어 기능
+//////////////////////////////////////////////////////////////////////////////
+function parseDataMission(topic, str_message) {
   try {
-         var topic_arr = topic.split('/');
+        var topic_arr = topic.split('/');
          var _topic = '/MUV/control/' + config.lib[0].name + '/' + topic_arr[topic_arr.length - 1];
          msw_mqtt_client.publish(_topic, str_message);
   }
@@ -332,6 +334,7 @@ function parseControlMission(topic, str_message) {
     console.log('[parseDataMission] data format of lib is not json');
   }
 }
+///////////////////////////////////////////////////////////////////////////////
 
 function parseFcData(topic, str_message) {
 }
