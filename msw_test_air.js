@@ -18,7 +18,7 @@ var mqtt = require('mqtt');
 var fs = require('fs');
 var spawn = require('child_process').spawn;
 
-var my_msw_name = 'msw_tset_air';
+var my_msw_name = 'msw_test_air';
 
 var fc = {};
 var config = {};
@@ -42,7 +42,7 @@ catch (e) {
 
 config.directory_name = 'lib_sparrow_air';
 const mlib_name = 'lib_sparrow_air';
-const mlib_repository_url = 'https://github.com/IoTKETI/lib_sparrow_air.git';
+const mlib_repository_url = 'http://github.com/IoTKETI/lib_sparrow_air.git';
 
 try {
   if(fs.existsSync('./' + config.directory_name)) {
