@@ -315,9 +315,9 @@ function parseDataMission(topic, str_message) {
            var topic_arr = topic.split('/');
          var data_topic = '/Mobius/' + config.gcs + '/Mission_Data/' + config.drone + '/' + config.name + '/' + topic_arr[topic_arr.length-1];
          msw_mqtt_client.publish(data_topic + '/' + my_sortie_name, str_message);
- var _topic = '/MUV/control/' + config.lib[0].name + '/' + topic_arr[topic_arr.length - 1];
+  var _topic = '/MUV/control/' + config.lib[0].name + '/' + topic_arr[topic_arr.length - 1];
  var req = '1';
-  msw_mqtt_client.publish(_topic, str_message);
+  msw_mqtt_client.publish(_topic, req);
   }
   catch (e) {
     console.log('[parseDataMission] data format of lib is not json');
